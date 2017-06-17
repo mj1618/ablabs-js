@@ -33,7 +33,7 @@ import ABLabs from 'ablabs-js'
 ```
 const ab = new ABLabs('{your_key}');
 let variation;
-ab.assign( userId ).then(res=>{
+ab.assign( 'experiment1' ).then(res=>{
     variation = res.variation;
 });
 ...
