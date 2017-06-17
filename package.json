@@ -48,13 +48,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "keywords": [
-    "immutable",
-    "state",
-    "events",
-    "cursors",
-    "model",
-    "flux",
-    "framework"
+    "ab-testing"
   ],
   "license": "MIT",
   "bugs": {
