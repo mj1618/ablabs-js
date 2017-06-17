@@ -1,6 +1,6 @@
 {
   "name": "ablabs-js",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "JS/NPM Client Library for ABLabs projects",
   "main": "./dist/index.js",
   "dependencies": {
@@ -27,7 +27,7 @@
     "watchify": "^3.9.0"
   },
   "scripts": {
-    "build": "mkdirp build && browserify ./src/index.js -t [babelify] -s ABLabsJS -o ./build/ablabs.js && uglifyjs ./build/ablabs.js -c -m -o ./build/ablabs.min.js && node ./scripts/banner.js",
+    "build": "mkdirp build && browserify ./src/index.js -t [babelify] -s ABLabs -o ./build/ablabs.js && uglifyjs ./build/ablabs.js -c -m -o ./build/ablabs.min.js && node ./scripts/banner.js",
     "watch": "watch 'npm run build' ./src",
     "dist": "babel ./src --out-dir dist",
     "clean": "rm -f build/*.js dist/*.js",
