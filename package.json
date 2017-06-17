@@ -34,7 +34,7 @@
     "lint": "eslint ./src ./test",
     "check": "npm test && npm run lint && npm run build",
     "prepublish": "npm run dist",
-    "test": "mocha -R spec --recursive --compilers js:babel-register"
+    "test": "mocha -R spec --recursive --timeout 2000 --compilers js:babel-register"
   },
   "author": {
     "name": "Matt James",
