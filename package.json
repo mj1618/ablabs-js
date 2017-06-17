@@ -1,6 +1,6 @@
 {
   "name": "ablabs-js",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "JS/NPM Client Library for ABLabs projects",
   "main": "./dist/index.js",
   "dependencies": {
