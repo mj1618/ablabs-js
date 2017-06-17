@@ -2,7 +2,7 @@
  * ABLabsJS
  *
  * Homepage: https://github.com/mj1618/ablabs-js
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: mj1618 (Matt James)
  * License: MIT
  */
