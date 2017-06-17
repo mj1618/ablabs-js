@@ -4,9 +4,9 @@
   "description": "JS/NPM Client Library for ABLabs projects",
   "main": "./dist/index.js",
   "dependencies": {
-    "immutable": "^3.8.1",
-    "lodash": "^4.15.0",
-    "whatwg-fetch": "^2.0.3"
+    "bluebird": "^3.5.0",
+    "superagent": "^3.5.2",
+    "superagent-bluebird-promise": "^4.2.0"
   },
   "devDependencies": {
     "add-banner": "^0.1.0",

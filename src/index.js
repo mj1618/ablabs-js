@@ -1,6 +1,6 @@
-import 'whatwg-fetch';
+import request from 'superagent-bluebird-promise';
 
-const url = 'http://localhost:3000';//https://ablabs.io';
+const url = 'https://ablabs.io';
 
 const getLocal = key => {
     if (typeof(Storage) !== "undefined") {
@@ -33,30 +33,28 @@ export default class ABLabs {
     assign( experimentName ) {
         const user = this.user;
         const token = this.token;
-        return fetch( url + '/api/v1/assign', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ 
+        return request
+            .post( url + '/api/v1/assign')
+            .send({ 
                 experiment: experimentName, 
                 user, 
                 token
-            })
-        }).then(response=>{
-            return response.json();
-        }).then(json=>{
-            if(json.result==='success'){
-                this.experiments.push({
-                    name: experimentName,
-                    user,
-                    token
-                });
-            }
-            return json;
-        }).catch(ex=>{
-            console.log('ABLabs assign request failed', ex);
-        });
+            }) // sends a JSON post body
+            .set('Content-Type', 'application/json')
+            .then(response=>{
+                return response.body;
+            }).then(json=>{
+                if(json.result==='success'){
+                    this.experiments.push({
+                        name: experimentName,
+                        user,
+                        token
+                    });
+                }
+                return json;
+            }).catch(ex=>{
+                console.log('ABLabs assign request failed', ex);
+            });
     }
 
     track( event, amount=1 ) {
@@ -68,24 +66,20 @@ export default class ABLabs {
             console.log('ABLabs: no experiments assigned to user');
             return false;
         }
-        return fetch( url + '/api/v1/track', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ 
+        return request
+            .post(url + '/api/v1/track')
+            .send({ 
                 event,
                 experiments,
                 user,
                 amount,
                 token
-            })
-        }).then(response=>{
-            return response.json();
-        }).then(json=>{
-            return json;
-        }).catch(ex=>{
-            console.log('ABLabs assign request failed', ex)
-        });
+            }) // sends a JSON post body
+            .set('Content-Type', 'application/json')
+            .then(response=>{
+                return response.body;
+            }).catch(ex=>{
+                console.log('ABLabs assign request failed', ex)
+            });
     }
 };
