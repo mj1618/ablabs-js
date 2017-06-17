@@ -6,7 +6,7 @@
 
 First include it in the browser head:
 ```
-<script src="https://cdn.rawgit.com/mj1618/ablabs-js/99f0fe1d/build/ablabs.min.js"></script>
+<script src="https://cdn.rawgit.com/mj1618/ablabs-js/master/build/ablabs.min.js"></script>
 ```
 
 You can use it directly in JS:
