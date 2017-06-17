@@ -1,6 +1,5 @@
 /* eslint-env node, mocha */
 import assert from 'assert';
-import 'isomorphic-fetch'
 import ABLabs from '../../dist/index';
 
 describe('ABLabs E2E Test', function() {
