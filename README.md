@@ -12,7 +12,7 @@ The Node and browser API is the same, though they require different libraries.
 
 First include the ABLabsJS browser library in the browser head:
 ```
-<script src="https://cdn.rawgit.com/mj1618/ablabs-js/master/build/ablabs.min.js"></script>
+<script src="https://cdn.rawgit.com/mj1618/ablabs-js/v1.0.7/build/ablabs.min.js"></script>
 ```
 
 You can use it directly in JS:
