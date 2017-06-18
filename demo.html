@@ -58,9 +58,9 @@
 <script src="https://cdn.rawgit.com/mj1618/ablabs-js/master/build/ablabs.min.js"></script>
 <script type="text/javascript">
 var ab = new ABLabs.default( 'a49ca12dd64415c580a28e8326287335' );
-$("#output-items").append("<li>Assigning Experiment to user: 'Blue/Green Button Experiment'</li>");
+$("#output-items").append("<li>Requesting to assign variation to user for experiment: 'Blue/Green Button Experiment'</li>");
 ab.assign('Blue/Green Button Experiment').then(e=>{
-    $("#output-items").append("<li>Variation assigned to user: "+e.variation+"</li>");
+    $("#output-items").append("<li>Variation was assigned to user: "+e.variation+"</li>");
     if(e.variation==='Blue Button'){
         $('#test-button').addClass('blue');
         trackOnClick();
