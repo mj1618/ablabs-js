@@ -2,9 +2,15 @@
 [![npm version](https://img.shields.io/npm/v/ablabs-js.svg?style=flat-square)](https://www.npmjs.com/package/ablabs-js)
 [![Build Status](https://travis-ci.org/mj1618/ablabs-js.svg?branch=master)](https://travis-ci.org/mj1618/ablabs-js)
 
+## Demo Usage
+Browser: https://cdn.rawgit.com/mj1618/ablabs-js/master/demo.html
+Node: https://runkit.com/embed/wqdw4dni7wgz
+
+The Node and browser API is the same, though they require different libraries.
+
 ## Browser Usage
 
-First include it in the browser head:
+First include the ABLabsJS browser library in the browser head:
 ```
 <script src="https://cdn.rawgit.com/mj1618/ablabs-js/master/build/ablabs.min.js"></script>
 ```
@@ -33,11 +39,11 @@ import ABLabs from 'ablabs-js'
 ```
 const ab = new ABLabs('{your_key}');
 let variation;
-ab.assign( 'experiment1' ).then(res=>{
+ab.assign( 'Blue/Green Button Experiment' ).then(res=>{
     variation = res.variation;
 });
 ...
-ab.track( 'event1' );
+ab.track( 'Clicked Button' );
 ```
 
 

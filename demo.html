@@ -1,0 +1,88 @@
+
+<html>
+<head>
+<style>
+.wrapper {
+    text-align: center;
+    position: absolute;
+    top: 20%;   
+    width: 100%;
+}
+
+.green {
+    background-color: #4CAF50;
+}
+
+.blue {
+    background-color: #008CBA;
+}
+
+.button {
+    text-align: center;
+    margin-left:-20px;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+#output {
+    width: 400px;
+    text-align: left;
+    margin: 0 auto;
+}
+#output-items li {
+    padding: 10px 0px;
+}
+</style>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<body>
+
+<div class="wrapper">
+    <button id='test-button' class="button">Click Me!</button>
+
+<div id="output">
+<h4>Javascript Output</h4>
+<ul id="output-items">
+
+</ul>
+</div>
+</div>
+
+
+<script src="https://cdn.rawgit.com/mj1618/ablabs-js/master/build/ablabs.min.js"></script>
+<script type="text/javascript">
+var ab = new ABLabs.default( 'a49ca12dd64415c580a28e8326287335' );
+$("#output-items").append("<li>Assigning Experiment to user: 'Blue/Green Button Experiment'</li>");
+ab.assign('Blue/Green Button Experiment').then(e=>{
+    $("#output-items").append("<li>Variation assigned to user: "+e.variation+"</li>");
+    if(e.variation==='Blue Button'){
+        $('#test-button').addClass('blue');
+        trackOnClick();
+    } else if(e.variation==='Green Button') {
+        $('#test-button').addClass('green');
+        trackOnClick();
+    } else {
+        $("#output-items").append("<li>Didn't receive a valid variation</li>");
+    }
+});
+
+function trackOnClick(){
+    $('#test-button').click(()=>{
+        ab.track('Clicked Button').then(t=>{
+            if(t.result==='success'){
+                $("#output-items").append("<li>Tracked 'Clicked Button' event</li>");
+            } else {
+                $("#output-items").append("<li>Failed to track 'Clicked Button' event</li>");
+            }
+        });
+    })
+}
+</script>
+</body>
+</html>
