@@ -3,8 +3,8 @@
 [![Build Status](https://travis-ci.org/mj1618/ablabs-js.svg?branch=master)](https://travis-ci.org/mj1618/ablabs-js)
 
 ## Demo Usage
-Browser: https://rawgit.com/mj1618/ablabs-js/master/demo.html  
-Node: https://runkit.com/embed/wqdw4dni7wgz
+Browser: https://ablabs.io/demo-browser.html  
+Node: https://ablabs.io/demo-node.html  
 
 The Node and browser API is the same, though they require different libraries.
 
